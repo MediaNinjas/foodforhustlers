@@ -68,3 +68,10 @@ No real email signup, intake submission, payment, or delivery test was performed
 - Hero now reads FROM FOOD CHAOS / TO A SYSTEM THAT WORKS without periods. Orange quotes attach to the first and last words and retain vertical alignment as the text wraps.
 - Enlarged the top line, removed its duplicate beneath the headline, and darkened the background overlay to 32% with faint static scanlines.
 - Static link/asset/ID/heading audit passed. This is a local preview, with no live-site deployment.
+
+- Header anchor alignment corrected: removed obsolete 105px desktop / 25px phone scroll padding because the header is not fixed. All four header targets verified within 1px of the viewport top at 1204px and 390px; the mobile menu closes on selection. Removed the four Read the field note card labels.
+
+
+- Hero lead-magnet update: removed both small CTA links and the bottom explore link, widened supporting copy, and paired the actual ebook cover with one orange guide button. Button opens the existing guide dialog and official signup link; 320px/390px phone layouts and desktop checked without horizontal overflow. No new form or email collection added.
+
+- Supporting-copy review: removed decorative slogans, repeated card captions, redundant guide benefits, duplicate video prompts, and repeated offer points. Retained concrete service benefits, offer distinctions, pricing, delivery expectations, form labels, and privacy information. Updated tab copy checked on mobile; compact offer layout checked on tablet.

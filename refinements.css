@@ -416,6 +416,8 @@ a:not(.brand):not(.button):hover,
 }
 
 /* Fluid page grid: columns follow available space, with no fixed card heights. */
+/* The header scrolls with the page, so section anchors need no header offset. */
+html { scroll-padding-top: 0; }
 .hero-word { display: inline-block; position: relative; }
 :root {
   --page-gutter: clamp(16px, 4vw, 56px);
@@ -570,4 +572,82 @@ summary { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px; 
   .featured > p { grid-area: copy; }
   .offers > .offer.featured .check-list { grid-area: list; margin: 0; justify-content: center; }
   .offers > .offer.featured .button { grid-area: button; margin-top: 24px; }
+}
+
+/* One clear first step, paired with the actual free guide. */
+.cinematic-hero { grid-template-rows: auto 1fr; gap: 0; }
+.cinematic-hero .hero-copy > .eyebrow { width: 100%; max-width: 940px; }
+.cinematic-hero .hero-statement + .hero-detail {
+  width: 100%;
+  max-width: 840px;
+  margin: 26px auto 0;
+  font-size: clamp(16px, 1.4vw, 18px);
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+.hero-guide {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 330px);
+  align-items: center;
+  gap: 28px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 28px auto 0;
+  text-align: left;
+}
+.hero-guide-cover {
+  transform: rotate(-7deg);
+  box-shadow: 9px 12px 26px rgb(0 0 0 / 50%);
+  border-left: 4px solid #34271c;
+}
+.hero-guide-cover img { width: 100%; height: auto; }
+.hero-guide-copy { min-width: 0; }
+.hero-guide-kicker { font-size: 10px; font-weight: 700; letter-spacing: .1em; line-height: 1.4; color: var(--accent); }
+.cinematic-hero .hero-guide-title { font-size: 25px; line-height: 1.05; letter-spacing: 0; color: #fff; margin-top: 7px; }
+.hero-guide .hero-guide-button {
+  width: 100%;
+  margin-top: 14px;
+  min-height: 56px;
+  padding: 14px 20px;
+  gap: 16px;
+  background: var(--accent);
+  color: #10110f;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: .025em;
+}
+.hero-guide .hero-guide-button:hover { background: #ffab70; }
+.hero-guide .hero-guide-note { font-size: 12px; line-height: 1.5; color: #d0c8bc; margin-top: 9px; }
+@media (max-width: 760px) {
+  .cinematic-hero { min-height: 800px; padding-bottom: 120px; }
+  .cinematic-hero .hero-copy > .eyebrow { max-width: 100%; }
+  .cinematic-hero .hero-statement + .hero-detail { max-width: 100%; }
+  .hero-guide { grid-template-columns: 90px minmax(0, 310px); gap: 22px; margin-top: 26px; }
+  .cinematic-hero .hero-guide-title { font-size: 22px; }
+  .hero-guide .hero-guide-button { font-size: 15px; padding-inline: 16px; }
+}
+@media (max-width: 450px) {
+  .hero-guide { grid-template-columns: 78px minmax(0, 1fr); gap: 20px; width: 100%; }
+  .hero-guide-kicker { font-size: 9px; }
+  .cinematic-hero .hero-guide-title { font-size: 20px; }
+  .hero-guide .hero-guide-button { font-size: 14px; padding-inline: 14px; gap: 10px; }
+  .hero-guide .hero-guide-note { font-size: 11px; }
+}
+
+/* Keep spacing intentional after removing redundant labels and captions. */
+.system-tab { grid-template-columns: minmax(0, 1fr) auto; }
+.system-panel > .panel-copy h3, .system-panel > .panel-copy p { max-width: 100%; }
+.hack-card h3 { margin-top: 18px; }
+.guide-copy .button { margin-top: 24px; }
+.cinematic-hero .hero-guide-title { margin-top: 0; }
+.footer-top { grid-template-columns: auto minmax(0, 1fr); }
+.footer-top > a:last-child { justify-self: end; }
+@media (max-width: 760px) {
+  .footer-top { grid-template-columns: minmax(0, 1fr); }
+  .footer-top > a:last-child { justify-self: stretch; }
+}
+@media (min-width: 680px) and (max-width: 1040px) {
+  .offers > .offer.featured {
+    grid-template-areas: 'label label' 'price list' 'title list' 'button button';
+  }
 }
