@@ -463,6 +463,7 @@ main section, .wrap, .section-heading > *, .system-explorer > *,
 .free-stamp { width: clamp(78px, 9vw, 100px); height: clamp(78px, 9vw, 100px); right: 5%; bottom: 6%; }
 .hack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 264px), 1fr)); gap: 36px clamp(20px, 2vw, 28px); }
 .card-image { height: auto; aspect-ratio: 1.3 / 1; }
+.card-image > .prep-photo { object-fit: cover; object-position: center 68%; }
 .hack-card h3 { font-size: clamp(30px, 2.6vw, 34px); }
 .hack-card p { font-size: 15px; max-width: none; }
 .filters { flex-wrap: wrap; gap: 10px; }
@@ -650,4 +651,46 @@ summary { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px; 
   .offers > .offer.featured {
     grid-template-areas: 'label label' 'price list' 'title list' 'button button';
   }
+}
+
+/* Give the free guide a clear, quiet home beneath the transformation. */
+.cinematic-hero .hero-tagline {
+  width: 100%;
+  max-width: 920px;
+  margin: 26px auto 0;
+  color: #eee9e1;
+  font-size: clamp(18px, 1.65vw, 24px);
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+.hero-guide {
+  grid-template-columns: 160px minmax(0, 340px);
+  gap: 32px;
+  width: min(100%, 580px);
+  margin-top: 44px;
+  padding: 26px;
+  border: 1px solid rgb(255 255 255 / 13%);
+  border-radius: 8px;
+  background: rgb(8 8 8 / 5%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 16px 42px rgb(0 0 0 / 20%);
+}
+.hero-guide-cover { transform: rotate(-5deg); }
+.cinematic-hero .hero-guide-title { font-size: 28px; line-height: 1.05; }
+.hero-guide .hero-guide-description { margin-top: 12px; font-size: 14px; line-height: 1.6; color: #ded8cf; text-wrap: pretty; }
+@media (max-width: 760px) {
+  .cinematic-hero .hero-tagline { margin-top: 24px; max-width: 100%; }
+  .hero-guide { grid-template-columns: 128px minmax(0, 1fr); gap: 24px; margin-top: 38px; padding: 24px; }
+  .cinematic-hero .hero-guide-title { font-size: 25px; }
+}
+@media (max-width: 450px) {
+  .hero-guide { grid-template-columns: 110px minmax(0, 1fr); gap: 18px; padding: 18px; margin-top: 34px; }
+  .cinematic-hero .hero-guide-title { font-size: 22px; }
+  .hero-guide .hero-guide-button { padding-inline: 12px; font-size: 14px; gap: 8px; }
+}
+@media (max-width: 370px) {
+  .hero-guide { grid-template-columns: minmax(0, 1fr); justify-items: center; text-align: center; gap: 20px; }
+  .hero-guide-cover { width: 116px; }
+  .hero-guide-copy { width: 100%; }
 }

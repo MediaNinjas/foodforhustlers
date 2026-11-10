@@ -22,3 +22,9 @@ Both are illustrative food photography. The exact prompts are in `asset-prompts.
 Barlow Condensed ExtraBold and DM Sans Regular/Bold, distributed through Google Fonts under the SIL Open Font License 1.1. Local font files and the license texts are included. Sources: [Barlow](https://github.com/google/fonts/tree/main/ofl/barlowcondensed), [DM Sans](https://github.com/google/fonts/tree/main/ofl/dmsans).
 
 The header and footer now pair the user-supplied flame/fork symbol from `Favon512.psd` with the original wordmark from `FoodForHustlersLogo copy.jpg`. The PSD composite was exported to browser-ready PNG/ICO formats, and the wordmark was resized for the web. The supplied artwork was not redrawn. No stock testimonials, customer logos, or invented certification marks are included.
+
+## Supplied meal photograph
+
+`assets/real-meal-hero.webp` is an AI relighting and reframing edit of the user-supplied IMG_6811.heic photograph. The existing cinematic hero was used only as a lighting/composition reference. The original HEIC was left unchanged. Edited with the built-in image-generation tool, then exported as WebP. The prompt is recorded in `asset-prompts.json`.
+
+- `assets/prep-real-photo.webp` uses the user-supplied IMG_6818.heic portrait photograph for the Prep the parts card. Converted to WebP and cropped to the card through CSS object-fit/object-position; the source photograph is unchanged and no AI retouching was applied.
